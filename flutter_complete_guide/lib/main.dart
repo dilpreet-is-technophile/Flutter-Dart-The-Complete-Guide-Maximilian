@@ -13,10 +13,42 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   var questionInd = 0;
-  var questionsArr = ["What is your fav color?", "What is your fav animal?"];
+  var questions = [
+    {
+      "questionText": "What\'s your favourite technology?",
+      "answerOptions": [
+        "Web development",
+        "App Development",
+        "Game Development",
+        "Machine Learning",
+        "Stack Overflow"
+      ],
+    },
+    {
+      "questionText":
+          "Who among the following is your tech industry inspiration?",
+      "answerOptions": [
+        "Steve Jobs",
+        "Bill gates",
+        "Elon Musk",
+        "Edward Snowden",
+        "Gottfrid Svartholm"
+      ],
+    },
+    {
+      "questionText": "Do you think code can be an art?",
+      "answerOptions": [
+        "Yes",
+        "Hell Yes",
+        "By all means",
+        "No second thoughts",
+        "Indeed"
+      ],
+    }
+  ];
 
   void answerQuestion(int num) {
-    if (questionInd == questionsArr.length - 1) {
+    if (questionInd == questions.length - 1) {
       return;
     }
     print("Answer Chosen $num");
@@ -33,10 +65,14 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            Question(questionsArr[questionInd]),
-            Answer(answerQuestion),
-            Answer(answerQuestion),
-            Answer(answerQuestion),
+            Question(questions[questionInd]["questionText"]),
+            ...(questions[questionInd]["answerOptions"] as List<String>)
+                .map((answer) {
+              return Answer(answerQuestion, answer);
+            }).toList()
+            // Answer(answerQuestion),
+            // Answer(answerQuestion),
+            // Answer(answerQuestion),
           ],
         ),
       ),

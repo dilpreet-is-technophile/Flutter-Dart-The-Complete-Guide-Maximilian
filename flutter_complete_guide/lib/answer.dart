@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class Answer extends StatelessWidget {
   // const Answer({Key key}) : super(key: key);
   final Function(int) callback;
-  Answer(this.callback);
+  final String answerText;
+  Answer(this.callback, this.answerText);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class Answer extends StatelessWidget {
           // answerQuestion(2);
           callback(1);
         },
-        child: Text("Answer 2"),
+        child: Text(answerText),
       ),
     );
   }
