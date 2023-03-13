@@ -4,8 +4,8 @@ class Answer extends StatelessWidget {
   // const Answer({Key key}) : super(key: key);
   final Function(int) callback;
   final String answerText;
-  Answer(this.callback, this.answerText);
-
+  final int score;
+  Answer(this.callback, this.answerText, this.score);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,8 +16,7 @@ class Answer extends StatelessWidget {
           foregroundColor: MaterialStateProperty.all(Colors.white),
         ),
         onPressed: () {
-          // answerQuestion(2);
-          callback(1);
+          callback(score);
         },
         child: Text(answerText),
       ),
