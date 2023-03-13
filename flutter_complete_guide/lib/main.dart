@@ -14,6 +14,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   var finalScore = 0;
   var questionInd = 0;
+
   var questions = [
     {
       "questionText": "1. What\'s your favourite technology?",
@@ -117,6 +118,13 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  void resetQuiz() {
+    setState(() {
+      finalScore = 0;
+      questionInd = 0;
+    });
+  }
+
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
@@ -125,7 +133,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: questionInd < questions.length
             ? Quiz(answerQuestion, questions, questionInd)
-            : Result(finalScore),
+            : Result(finalScore, resetQuiz),
       ),
     );
   }
