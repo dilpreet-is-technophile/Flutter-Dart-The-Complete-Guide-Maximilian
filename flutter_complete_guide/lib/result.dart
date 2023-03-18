@@ -8,9 +8,9 @@ class Result extends StatelessWidget {
   String get resultPhrase {
     if (finalScore == 90) {
       return "GOD LEVEL CODER";
-    } else if (finalScore > 85) {
+    } else if (finalScore > 80) {
       return "Wohoooo Perfect coder";
-    } else if (finalScore > 75) {
+    } else if (finalScore > 70) {
       return "You can call yourself coder, score is $finalScore";
     } else if (finalScore > 65) {
       return "hmmm maybe you are coding just for money, score is $finalScore";
