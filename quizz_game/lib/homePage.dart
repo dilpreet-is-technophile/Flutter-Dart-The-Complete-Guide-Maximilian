@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  const HomePage(this.switchScreen, {super.key});
 
+  final Function()? switchScreen;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -31,7 +32,7 @@ class HomePage extends StatelessWidget {
         ),
         ElevatedButton.icon(
           icon: const Icon(Icons.arrow_right_alt),
-          onPressed: () {},
+          onPressed: switchScreen,
           style: ElevatedButton.styleFrom(
             backgroundColor: const Color.fromARGB(255, 65, 43, 126),
             foregroundColor: Colors.white,

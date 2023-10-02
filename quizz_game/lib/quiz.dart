@@ -10,7 +10,13 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  Widget activeScreen = const HomePage();
+  Widget? activeScreen;
+
+  @override
+  void initState() {
+    activeScreen = HomePage(switchScreen);
+    super.initState();
+  }
 
   void switchScreen() {
     setState(() {
@@ -25,7 +31,7 @@ class _QuizState extends State<Quiz> {
         appBar: AppBar(
           title: const Text("Quizz Game"),
           centerTitle: true,
-          backgroundColor: Color.fromARGB(255, 65, 43, 126),
+          backgroundColor: const Color.fromARGB(255, 65, 43, 126),
         ),
         body: Container(
           // alignment: Alignment.center,
