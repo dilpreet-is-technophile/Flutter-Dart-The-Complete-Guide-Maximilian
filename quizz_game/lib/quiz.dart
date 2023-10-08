@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quizz_game/data/questions.dart';
-import 'package:quizz_game/model/results_screen.dart';
+import 'package:quizz_game/results_screen.dart';
 import 'package:quizz_game/questions.dart';
 import 'homePage.dart';
 
