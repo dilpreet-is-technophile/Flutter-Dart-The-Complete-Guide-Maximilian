@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quizz_game/homePage.dart';
+import 'package:quizz_game/home_page.dart';
 import 'package:quizz_game/data/questions.dart';
+import 'questions_summary.dart';
 
 class ResultsScreen extends StatelessWidget {
   const ResultsScreen(
@@ -10,6 +11,7 @@ class ResultsScreen extends StatelessWidget {
   final void Function() switchScreen;
   List<Map<String, Object>> getSummaryData() {
     final List<Map<String, Object>> summary = [];
+    print("answers value: " + chosenAnswers.toString());
     for (var i = 0; i < chosenAnswers.length; i++) {
       summary.add({
         'question_index': i,
@@ -32,7 +34,7 @@ class ResultsScreen extends StatelessWidget {
           children: [
             const Text("You have answered X out of Y questions correctly"),
             const SizedBox(height: 30),
-            const Text("list of answers and questions..."),
+            QuestionsSummary(getSummaryData()),
             const SizedBox(height: 30),
             TextButton(
                 onPressed: () {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quizz_game/data/questions.dart';
 import 'package:quizz_game/results_screen.dart';
 import 'package:quizz_game/questions.dart';
-import 'homePage.dart';
+import 'home_page.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -32,8 +32,9 @@ class _QuizState extends State<Quiz> {
 
     if (selectedAnswers.length == questions.length) {
       setState(() {
-        activeScreen = ResultsScreen(chosenAnswers: selectedAnswers, switchScreen: switchScreen);
-        selectedAnswers = [];
+        activeScreen = ResultsScreen(
+            chosenAnswers: selectedAnswers, switchScreen: switchScreen);
+        // selectedAnswers = [];
       });
     }
   }
