@@ -16,16 +16,16 @@ class Expenses extends StatefulWidget {
 class _ExpensesState extends State<Expenses> {
   // dummy expense data
   final List<Expense> _registeredExpenses = [
-    Expense(
-        title: "Flutter Course",
-        amount: 400,
-        date: DateTime.now(),
-        category: Category.work),
-    Expense(
-        title: "Movie",
-        amount: 300,
-        date: DateTime.now(),
-        category: Category.leisure),
+    // Expense(
+    //     title: "Flutter Course",
+    //     amount: 400,
+    //     date: DateTime.now(),
+    //     category: Category.work),
+    // Expense(
+    //     title: "Movie",
+    //     amount: 300,
+    //     date: DateTime.now(),
+    //     category: Category.leisure),
   ];
 
   // + button functionality function
